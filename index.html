@@ -1,113 +1,346 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
+    <title>DigiMedia - Digital Marketing Agency</title>
+    <meta name="description" content="DigiMedia is a digital marketing agency that offers SEO, PPC, social media, web design, and content marketing services.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* CSS code for styling the website */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <head>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-    <title>DigiMedia SEO Template 3 variations by TemplateMo</title>
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            padding: 20px;
+        }
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #f60;
+        }
 
+        .menu {
+            list-style: none;
+            display: flex;
+        }
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/templatemo-digimedia-v1.css">
-    <link rel="stylesheet" href="assets/css/animated.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
-<!--
+        .menu li {
+            margin-left: 20px;
+        }
 
-TemplateMo 568 DigiMedia
+        .menu a {
+            text-decoration: none;
+            color: #333;
+        }
 
-https://templatemo.com/tm-568-digimedia
+        .menu a:hover {
+            color: #f60;
+        }
 
--->
-  </head>
+        .hero {
+            background-image: url("hero.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
+        .hero h1 {
+            font-size: 48px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .hero a {
+            display: inline-block;
+            padding: 15px 25px;
+            background-color: #f60;
+            color: #fff;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+
+        .hero a:hover {
+            background-color: #f90;
+        }
+
+        .services {
+            padding: 40px 0;
+            background-color: #f0f0f0;
+        }
+
+        .services h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .services .card {
+            width: 300px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .services .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .services .card h3 {
+            font-size: 24px;
+            padding: 15px;
+        }
+
+        .services .card p {
+            font-size: 16px;
+            padding: 15px;
+        }
+
+        .services .card a {
+            display: block;
+            padding: 15px;
+            background-color: #f60;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .services .card a:hover {
+            background-color: #f90;
+        }
+
+        .testimonials {
+            padding: 40px 0;
+            background-color: #fff;
+        }
+
+        .testimonials h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .testimonials .slider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testimonials .slider .quote {
+            width: 600px;
+            margin: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            position: relative;
+        }
+
+        .testimonials .slider .quote:before {
+            content: "\201C";
+            font-size: 80px;
+            color: #f60;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+        }
+
+        .testimonials .slider .quote p {
+            font-size: 18px;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonials .slider .quote .author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonials .slider .quote .author img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .testimonials .slider .quote .author .name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .testimonials .slider .quote .author .role {
+            font-size: 16px;
+            color: #999;
+        }
+
+        .contact {
+            padding: 40px 0;
+            background-color: #f0f0f0;
+        }
+
+        .contact h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact form {
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact form .input-group {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .contact form .input-group label {
+            width: 150px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .contact form .input-group input,
+        .contact form .input-group textarea {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .contact form .input-group textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        .contact form .submit {
+            display: block;
+            width: 200px;
+            margin: 0 auto;
+            padding: 15px;
+            background-color: #f60;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .contact form .submit:hover {
+            background-color: #f90;
+        }
+
+        .footer {
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 16px;
+        }
+
+        .footer a {
+            color: #f60;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #f90;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .menu {
+                flex-direction: column;
+            }
+
+            .menu li {
+                margin: 10px 0;
+            }
+
+            .services .card {
+                width: 90%;
+            }
+
+            .testimonials .slider {
+                flex-direction: column;
+            }
+
+            .testimonials .slider .quote {
+                width: 90%;
+            }
+
+            .contact form {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
 <body>
-
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+    <div class="navbar">
+        <div class="container">
+            <div class="logo">DigiMedia</div>
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
-
-  <div class="intro-banner">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <img src="assets/images/logo-v1.png" alt="">
-          <h1>DigiMedia HTML5 Template</h1>
-          <h4>Please choose one of the three variations below.</h4>
-          <div class="first-button scroll-to-section">
-            <a href="#demos">Choose Demo</a>
-          </div>
+    <div class="hero" id="home">
+        <div class="container">
+            <h1>DigiMedia - Digital Marketing Agency</h1>
+            <p>We help you grow your online presence and reach more customers with our SEO, PPC, social media, web design, and content marketing services.</p>
+            <a href="#contact">Get a Free Quote</a>
         </div>
-      </div>
     </div>
-  </div>
-
-
-  <div class="demos" id="demos">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="demo-item">
-            <a href="homepage_1.html"><img src="assets/images/demo-1.jpg" alt="DigiMedia - variation 1"></a>
-            <h4>Version 1</h4>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="demo-item">
-            <a href="homepage_2.html"><img src="assets/images/demo-2.jpg" alt="DigiMedia - variation 2"></a>
-            <h4>Version 2</h4>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="demo-item">
-            <a href="homepage_3.html"><img src="assets/images/demo-3.jpg" alt="DigiMedia - variation 3"></a>
-            <h4>Version 3</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <p>Copyright © 2022 DigiMedia Co., Ltd. All Rights Reserved. 
-          <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a></p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-
-  <!-- Scripts -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/animation.js"></script>
-  <script src="assets/js/imagesloaded.js"></script>
-  <script src="assets/js/custom.js"></script>
-
-</body>
-
-</html>
+    <div class="services" id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="card">
+                <img src="seo.jpg" alt="SEO">
+                <h3>Search Engine Optimization</h3>
+                <p>We optimize your website for the best ranking on Google and other search engines. We use the latest SEO techniques and tools to boost your organic traffic and conversions.</p>
+                <a href="#contact">Learn More</a>
+            </div>
+            <div class="card">
+                <img src="ppc.jpg" alt="PPC">
+                <h3>Pay-Per-Click Advertising</h3>
+                <p>We create and manage effective PPC campaigns on Google Ads, Facebook Ads, and other platforms. We target your ideal audience and maximize your return on investment.</p>
+                <a href="#contact">Learn More</a>
+            </div>
+            <div class
